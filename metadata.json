@@ -1,0 +1,5 @@
+{
+  "name": "Social & History Gradebook",
+  "description": "A comprehensive grading system for Social Studies and History (M.1, M.5, M.6) featuring teacher management and student portals with automatic grade calculation.",
+  "requestFramePermissions": []
+}
