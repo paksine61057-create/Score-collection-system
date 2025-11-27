@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { UserRole } from '../types';
-import { User, Lock, ArrowRight, Loader2, Shield, Sword, Hexagon } from 'lucide-react';
+import { User, Lock, ArrowRight, Loader2, Shield, Sword, AlertCircle } from 'lucide-react';
 import { DataService } from '../services/dataService';
 
 interface LoginProps {
@@ -183,7 +182,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
                 {error && (
                     <div className="bg-red-950/50 border border-red-900/50 text-red-400 text-[10px] font-bold uppercase tracking-wide p-3 rounded flex items-center gap-2 animate-shake shadow-[0_0_10px_rgba(220,38,38,0.2)]">
-                        <Hexagon size={12} className="text-red-500 fill-red-500" />
+                        <AlertCircle size={12} className="text-red-500" />
                         {error}
                     </div>
                 )}
@@ -191,7 +190,7 @@ export const Login: React.FC<LoginProps> = ({ onLogin }) => {
                 <button
                     type="submit"
                     disabled={loading}
-                    className={`w-full relative overflow-hidden group py-4 font-black uppercase tracking-[0.2em] text-sm transition-all duration-300 shadow-lg transform active:scale-[0.98] clip-path-polygon ${loading ? 'opacity-70 cursor-not-allowed' : ''} ${
+                    className={`w-full relative overflow-hidden group py-4 font-black uppercase tracking-[0.2em] text-sm transition-all duration-300 shadow-lg transform active:scale-[0.98] ${loading ? 'opacity-70 cursor-not-allowed' : ''} ${
                         activeTab === 'STUDENT' 
                         ? 'bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 text-white shadow-blue-900/50 border border-blue-400/50 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)]' 
                         : 'bg-gradient-to-r from-amber-600 via-amber-500 to-yellow-500 text-white shadow-amber-900/50 border border-amber-400/50 hover:shadow-[0_0_20px_rgba(245,158,11,0.6)]'
